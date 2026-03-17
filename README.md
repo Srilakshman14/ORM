@@ -1,7 +1,5 @@
 # Ex01 Django ORM Web Application
-# Date:
-# Reg no:212224245001
-# Name:srilakshman
+# Date: 04.02.2026
 # AIM
 To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
@@ -21,21 +19,38 @@ Execute Django admin and create details for 10 books
 
 # PROGRAM
 ```
-models.py
-
-from django.db import models from django.contrib import admin class loan (models.Model): loan_id=models.IntegerField(primary_key=True) loan_type =models.CharField(max_length=30) loan_amnt =models.FloatField() cust_acntno =models.IntegerField() cust_name=models.CharField(max_length=50)
-
-class loanadmin(admin.ModelAdmin): list_display=('loan_id','loan_type','loan_amnt','cust_acntno','cust_name')
-
-admins.py
-
+admin.py
 from django.contrib import admin
-from .models import loan,loanadmin
-admin.site.register(loan,loanadmin)
-```
-# OUTPUT
 
-![438606268-6f69917a-9c0d-404d-a46d-7880455a196f](https://github.com/user-attachments/assets/fd631bb5-7350-425e-bab5-0bd5bdf9ae49)
+from.models import Car,CarAdmin
+
+admin.site.register(Car,CarAdmin)
+
+#Resgister your models here.
+
+models.py
+from django.db import models
+from django.contrib import admin
+
+class Car(models.Model):
+    car_brand = models.CharField()
+    car_model = models.CharField()
+    year = models.DateField()
+    color = models.CharField()
+    engine_type = models.CharField()
+    fuel_type = models.CharField()
+    transmission = models.CharField()
+    seating_capacity = models.IntegerField()
+    price = models.CharField()m
+    description = models.TextField()
+
+class CarAdmin(admin.ModelAdmin):
+    list_display = ('car_brand', 'car_model', 'year', 'color', 'engine_type', 'fuel_type', 'transmission', 'seating_capacity', 'price', 'description')
+```
+
+# OUTPUT
+Include the screenshot of your admin page.
+<img width="1920" height="1080" alt="Screenshot 2025-09-21 100134" src="https://github.com/user-attachments/assets/d9619544-78ef-4104-8a47-ed64ebdb0cc7" />
 
 # RESULT
 Thus the program for creating a database using ORM hass been executed successfully
